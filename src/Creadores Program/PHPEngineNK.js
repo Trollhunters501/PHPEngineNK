@@ -29,8 +29,29 @@ const PHPEngineNK = Class(Object, {
       },
       getLanguageVersion: function(){
         return PHPManager.getLanguageVersion();
+      },
+      getManager: function(){
+        return PHPManager;
+      },
+      getEngine: function(){
+        return PHPEngine;
+      },
+      getClass: function(){
+        return this;
+      },
+      getEngineClass: function(){
+        return PHPFactor;
       }
     };
     return subClass;
+  },
+  getClass: function(){
+    return this;
+  },
+  constructor: function(){
+    return this.build();
+  },
+  getName: function(){
+    return "PHPEngineNK";
   }
 });
