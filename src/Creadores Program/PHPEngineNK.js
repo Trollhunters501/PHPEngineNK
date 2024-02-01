@@ -1,3 +1,10 @@
+script.registerScript({
+    name: "PHPEngineNK",
+    version: "1.0",
+    description: "Run PHP on Nukkit!",
+    website: "https://github.com/Trollhunters501/PHPEngineNK/",
+    authors: ["Creadores Program"]
+});
 const PHPEngineNK = Class(Object, {
   build: function(){
     let libs = new NnClassLoader({ urls: ['https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66-javadoc.jar', 'https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66-sources.jar', "https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66.jar"] });
@@ -41,6 +48,9 @@ const PHPEngineNK = Class(Object, {
       },
       getEngineClass: function(){
         return PHPFactor;
+      },
+      ArrayToCode: function(arrayCode){
+        return PHPManager.getProgram(arrayCode);
       }
     };
     return subClass;
@@ -53,5 +63,8 @@ const PHPEngineNK = Class(Object, {
   },
   getName: function(){
     return "PHPEngineNK";
+  },
+  toString: function(){
+    return "PHPEngineNK[]"
   }
 });
