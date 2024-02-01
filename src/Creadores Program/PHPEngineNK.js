@@ -10,7 +10,6 @@ const PHPEngineNK = Class(Object, {
     PHPEngine.put("logger", plugin.getLogger());
     PHPEngine.put("plugin", plugin);
     PHPEngine.put("manager", manager);
-    PHPEngine.put("players", players);
     let subClass = {
       put: function(name, content){
         PHPEngine.put(name, content);
@@ -19,7 +18,7 @@ const PHPEngineNK = Class(Object, {
         PHPEngine.eval(code);
       },
       getEngineName: function(){
-        return "PHPEngineNK &" + PHPManager.getEngineName();
+        return "PHPEngineNK & " + PHPManager.getEngineName();
       },
       setNnClassLoader: function(codeNC, classes){
         let ClasLoad = new NnClassLoader(codeNC);
@@ -27,6 +26,9 @@ const PHPEngineNK = Class(Object, {
         for(var keys in KeysClass){
           PHPEngine.put(KeysClass[keys], ClasLoad.type(classes[KeysClass[keys]]));
         }
+      },
+      getLanguageVersion: function(){
+        return PHPManager.getLanguageVersion();
       }
     };
     return subClass;
