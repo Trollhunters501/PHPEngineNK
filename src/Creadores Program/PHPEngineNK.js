@@ -56,7 +56,18 @@ const PHPEngineNK = Class(Object, {
           return PHPManager.getOutputStatement(message);
       },
       ConvertPHP: function(object, func, args){
-          return PHPManager.getMethodCallSyntax(object, func, args);
+          let stringToPHP = "$"+object+"->"+func+"(";
+          if(args != null){
+          for(var idk in args){
+              if(idk != 0){
+                  stringToPHP += ", " + args[idk];
+              }else{
+                  stringToPHP += args[idk];
+              }
+          }
+          }
+          stringToPHP += ");\n";
+          return stringToPHP;
       }
     };
     return subClass;
