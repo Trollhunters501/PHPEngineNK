@@ -71,6 +71,13 @@ const PHPEngineNK = Class(Object, {
           }
           stringToPHP += ");\n";
           return stringToPHP;
+      },
+      evalFile: function(fileA){
+          let FilesImport = new JavaImporter(java.io);
+          with(FilesImport){
+              let reader = new InputStreamReader(new FileInputStream(fileA));
+              PHPEngine.eval(reader);
+          }
       }
     };
     return subClass;
