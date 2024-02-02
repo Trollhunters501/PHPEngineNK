@@ -59,6 +59,9 @@ const PHPEngineNK = Class(Object, {
           let stringToPHP = "$"+object+"->"+func+"(";
           if(args != null){
           for(var idk in args){
+              if(args[idk].indexOf("'") == -1 && args[idk].indexOf("`") == -1 && args[idk].indexOf('"') == -1){
+                  args[idk] = "$"+args[idk];
+              }
               if(idk != 0){
                   stringToPHP += ", " + args[idk];
               }else{
