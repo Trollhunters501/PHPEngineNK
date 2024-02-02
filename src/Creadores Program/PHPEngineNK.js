@@ -74,7 +74,3 @@ const PHPEngineNK = Class(Object, {
     return "PHPEngineNK[]";
   }
 });
-script.addEventListener("Enable", function(){
-    console.info("§9PHP Engine NK Loaded!");
-    console.info("§1By Creadores Program 2024©");
-});
