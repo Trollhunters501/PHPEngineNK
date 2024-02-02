@@ -51,6 +51,12 @@ const PHPEngineNK = Class(Object, {
       },
       ArrayToCode: function(arrayCode){
         return PHPManager.getProgram(arrayCode);
+      },
+      printPHPCode: function(message){
+          return PHPManager.getOutputStatement(message);
+      },
+      ConvertPHP: function(object, func, args){
+          return PHPManager.getMethodCallSyntax(object, func, args);
       }
     };
     return subClass;
@@ -65,6 +71,6 @@ const PHPEngineNK = Class(Object, {
     return "PHPEngineNK";
   },
   toString: function(){
-    return "PHPEngineNK[]"
+    return "PHPEngineNK[]";
   }
 });
