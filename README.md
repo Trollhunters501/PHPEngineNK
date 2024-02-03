@@ -11,6 +11,22 @@ JSEngineNK Plugin: https://cloudburstmc.org/resources/jsenginenk.939/
 
 Know Basic JavaScript.
 
+## IMPORTANT
+### Why did I do it in JSEngineNK?
+Because in PHP classes and non-object functions are not saved, that means that PHP functions cannot be called and only global objects set by the function (put) or (setNnClassLoader) are maintained.
+To use PHP you can register a JavaScript function in the manager that then returns PHP code
+```js
+manager.createCommand("name", "description", "functionUsed", "usage", ["aliase1", "aliase2"], "perm.nk");
+//TestPHP return new PHPEngineNK().build();
+function functionUsed(sender, args, label, manageCMD){
+  TestPHP.put("sender", sender);
+  TestPHP.put("args", args);
+  TestPHP.put("label", label);
+  TestPHP.put("manageCMD", manageCMD);
+  TestPHP.eval("<?php $sender->sendMessage("Hello world!"); ?>");
+}
+```
+
 ## Installation:
 
 First create a script in JSEngineNK as said in your example.
@@ -39,7 +55,7 @@ logger and getLogger = returns the JSEngineNK logger
 
 plugin = returns the JSEngineNK main class
 
-manager = returns the manager class
+manager = returns the manager class JSEngineNK
 
 ## Examples:
 
