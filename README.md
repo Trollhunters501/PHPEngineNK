@@ -123,3 +123,12 @@ TestPHP.evalFile(manager.getFile("TestPHP", "Main.php"));
 $getLogger->info("hello world!");
 ?>
 ```
+### Call Java classes from PHP:
+Call Java classes from PHP similar to JSEngineNK's Java.type
+
+```php
+\Java("con.nukkit.Server");
+```
+Same as Java.type!
+
+Creadores Program © 2024
