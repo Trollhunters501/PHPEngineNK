@@ -51,3 +51,75 @@ establish a global object that returns a java class or function (not compatible 
 ```js
 TestPHP.put("exampleName", ExampleJavaClass); //call in php: $exampleName->exampleFunction("hello world!");
 ```
+
+### getEngineName:
+returns the name of the engine (quercus) and the lib
+
+```js
+console.info("engine: " + TestPHP.getEngineName());
+```
+
+### setNnClassLoader:
+set global objects of classes obtained from the Nnclassloader API
+
+```js
+//first parameter Nnclassloader API code second a json that the variable name is set as global object and the content of the variable is the class obtained from the API
+TestPHP.setNnClassLoader({ urls: ["https://testurl.com/test.jar"] }, {
+  objectName: "class.package.example"
+}); //PHP: $objectName->testFunctionInClass("hello world!");
+```
+
+### getLanguageVersion:
+return PHP version
+
+PHP versión default: 5.3.2
+
+### getManager:
+return manager engine (quercus)
+
+### getEngine:
+returns the original engine without the extra functions added by the library (quercus)
+
+### getClass:
+returns the JS library class
+
+### getEngineClass:
+returns the original engine class (quercus)
+
+### ArrayToCode:
+returns PHP code in string separated by lines without needing to put ";" nor the php tag
+
+```js
+TestPHP.eval(TestPHP.ArrayToCode(["$getLogger->info('hello world!')", "$getServer->getLogger()->info('hello world 2!')"]));
+```
+
+### printPHPCode:
+returns PHP code in string to print a message in the console
+
+Do not use in ArrayToCode
+
+```js
+TestPHP.eval("<?php "+TestPHP.printPHPCode("Hello world!")+" ?>");
+```
+
+### ConvertPHP:
+returns PHP code in string that converts the arguments into PHP code
+
+Do not use in ArrayToCode
+
+```js
+TestPHP.eval("<?php "+TestPHP.ConvertPHP("object", "functionInObject", ["'args (Remember if you want to pass a string use quotes or you will pass it as an object ($))'", "arg2..."])+" ?>");
+```
+
+### evalFile:
+run PHP in a PHP file (remember to create the file first)
+
+```js
+TestPHP.evalFile(manager.getFile("TestPHP", "Main.php"));
+```
+#### In plugins/JSEngineNK/TestPHP/Main.php:
+```php
+<?php
+$getLogger->info("hello world!");
+?>
+```
