@@ -1,13 +1,14 @@
+if(manager.getPlugin("PHPLib") != null){
 script.registerScript({
     name: "PHPEngineNK",
-    version: "1.0",
+    version: "1.1",
     description: "Run PHP on Nukkit!",
     website: "https://github.com/Trollhunters501/PHPEngineNK/",
     authors: ["Creadores Program"]
 });
 const PHPEngineNK = Class(Object, {
   build: function(){
-    let libs = new NnClassLoader({ urls: ['https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66-javadoc.jar', 'https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66-sources.jar', "https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66.jar"] });
+    let libs = new NnClassLoader({ jars: [ server.getPluginPath() + 'PHPLib_v4.0.66.jar' ] });
     let PHPFactor = libs.type("com.caucho.quercus.script.QuercusScriptEngineFactory");
     let PHPManager = new PHPFactor();
     let PHPEngine = PHPManager.getScriptEngine();
@@ -95,3 +96,6 @@ const PHPEngineNK = Class(Object, {
     return "PHPEngineNK[]";
   }
 });
+}else{
+    console.critical("Not Found PHPLib Plugin! Please download at https://github.com/Trollhunters501/PHPLib/releases/tag/4.0.66");
+}
