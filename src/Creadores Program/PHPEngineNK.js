@@ -6,7 +6,7 @@ script.registerScript({
     website: "https://github.com/Trollhunters501/PHPEngineNK/",
     authors: ["Creadores Program"]
 });
-const PHPEngineNK = Class(Object, {
+var PHPEngineNK = Class(Object, {
   build: function(){
     let libs = new NnClassLoader({ jars: [ server.getPluginPath() + 'PHPLib_v4.0.66.jar' ] });
     let PHPFactor = libs.type("com.caucho.quercus.script.QuercusScriptEngineFactory");
@@ -98,4 +98,5 @@ const PHPEngineNK = Class(Object, {
 });
 }else{
     console.critical("Not Found PHPLib Plugin! Please download at https://github.com/Trollhunters501/PHPLib/releases/tag/4.0.66");
+    throw "Not Found PHPLib Plugin! Disable...";
 }
