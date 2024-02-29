@@ -8,7 +8,7 @@ script.registerScript({
 });
 var PHPEngineNK = Class(Object, {
   build: function(){
-    let libs = new NnClassLoader({ jars: [ server.getPluginPath() + 'PHPLib_v4.0.66.jar' ] });
+    let libs = new NnClassLoader({ jars: [ manager.getPlugin("PHPLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
     let PHPFactor = libs.type("com.caucho.quercus.script.QuercusScriptEngineFactory");
     let PHPManager = new PHPFactor();
     let PHPEngine = PHPManager.getScriptEngine();
