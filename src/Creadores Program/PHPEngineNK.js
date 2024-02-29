@@ -22,8 +22,8 @@ var PHPEngineNK = Class(Object, {
       put: function(name, content){
         PHPEngine.put(name, content);
       },
-      eval: function(code){
-        PHPEngine.eval(code);
+      eval: function(code, context){
+        PHPEngine.eval(code, context);
       },
       getEngineName: function(){
         return "PHPEngineNK & " + PHPManager.getEngineName();
