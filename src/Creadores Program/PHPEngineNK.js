@@ -4,7 +4,7 @@ script.registerScript({
     version: "1.1",
     description: "Run PHP on Nukkit!",
     website: "https://github.com/Trollhunters501/PHPEngineNK/",
-    authors: ["Creadores Program"]
+    author: "Creadores Program"
 });
 var PHPEngineNK = Class(Object, {
   build: function(){
