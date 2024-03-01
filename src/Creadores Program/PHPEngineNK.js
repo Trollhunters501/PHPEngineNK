@@ -23,7 +23,11 @@ var PHPEngineNK = Class(Object, {
         PHPEngine.put(name, content);
       },
       eval: function(code, context){
+          if(context == null){
+              PHPEngine.eval(code);
+          }else{
         PHPEngine.eval(code, context);
+          }
       },
       getEngineName: function(){
         return "PHPEngineNK & " + PHPManager.getEngineName();
