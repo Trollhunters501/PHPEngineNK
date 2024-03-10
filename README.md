@@ -147,7 +147,10 @@ $getLogger->info("hello world!");
 Call Java classes from PHP similar to JSEngineNK's Java.type
 
 ```php
-\Java("con.nukkit.Server");
+$test = \java_class("cn.nukkit.Server");
+//or
+import cn.nukkit.Server;
+//with import you can extend the Java class with PHP!
 ```
 Same as Java.type!
 
