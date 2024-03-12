@@ -1,7 +1,7 @@
 if(manager.getPlugin("PHPLib") != null){
 script.registerScript({
     name: "PHPEngineNK",
-    version: "1.1",
+    version: "1.2",
     description: "Run PHP on Nukkit!",
     website: "https://github.com/Trollhunters501/PHPEngineNK/",
     author: "Creadores Program"
