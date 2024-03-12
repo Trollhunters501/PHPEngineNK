@@ -78,12 +78,17 @@ var PHPEngineNK = Class(Object, {
           return stringToPHP;
       },
       evalFile: function(fileA){
-          let FilesImport = new JavaImporter(java.io);
-          with(FilesImport){
-              let reader = new FileReader(fileA);
-              PHPEngine.eval(reader);
-              reader.close();
+          if(!fileA instanceof java.io.File){
+              throw "The object is not a file!";
+              return;
           }
+          if(!fileA.exists()){
+              throw "The file does not exist!";
+              return;
+          }
+          let reader = new java.io.FileReader(fileA);
+          PHPEngine.eval(reader);
+          reader.close();
       }
     };
     return subClass;
