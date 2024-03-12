@@ -9,6 +9,8 @@ Run PHP on Nukkit!
 
 JSEngineNK Plugin: https://cloudburstmc.org/resources/jsenginenk.939/
 
+PHPLib Plugin: https://github.com/Trollhunters501/PHPLib
+
 Know Basic JavaScript.
 
 ## IMPORTANT
