@@ -80,12 +80,9 @@ var PHPEngineNK = Class(Object, {
       evalFile: function(fileA){
           let FilesImport = new JavaImporter(java.io);
           with(FilesImport){
-              try{
-                let reader = new InputStreamReader(new FileInputStream(fileA));
-              }catch(e){
-                  //ignore
-              }
+              let reader = new FileReader(fileA);
               PHPEngine.eval(reader);
+              reader.close();
           }
       }
     };
