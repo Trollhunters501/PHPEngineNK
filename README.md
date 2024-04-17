@@ -37,7 +37,7 @@ Check if the Library is installed as follows:
 
 ```js
 if(!script.getScriptByName("PHPEngineNK")){ //If it is not installed, we install it:
-  load("https://raw.githubusercontent.com/Trollhunters501/PHPEngineNK/main/src/Creadores%20Program/PHPEngineNK.js");
+  load("https://cdn.jsdelivr.net/gh/Trollhunters501/PHPEngineNK/src/Creadores%20Program/PHPEngineNK.js");
 }
 ```
 
