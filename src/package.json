@@ -1,0 +1,8 @@
+{
+    "name": "PHPEngineNK",
+    "version": "1.1.0",
+    "description": "Run PHP on Nukkit!",
+    "author": "Creadores Program",
+    "homepage": "https://github.com/Trollhunters501/PHPEngineNK/",
+    "main": "org/CreadoresProgram/PHPEngineNK.js"
+}

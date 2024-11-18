@@ -1,14 +1,7 @@
-if(manager.getPlugin("PHPLib") != null){
-script.registerScript({
-    name: "PHPEngineNK",
-    version: "1.2",
-    description: "Run PHP on Nukkit!",
-    website: "https://github.com/Trollhunters501/PHPEngineNK/",
-    author: "Creadores Program"
-});
-var PHPEngineNK = Class(Object, {
+const prefix = "[PHPEngineNK] ";
+const PHPEngineNK = Class(Object, {
   build: function(){
-    let libs = new NnClassLoader({ jars: [ manager.getPlugin("PHPLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
+    let libs = new NnClassLoader({ urls: ['https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66-javadoc.jar', 'https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66-sources.jar', "https://repo1.maven.org/maven2/com/caucho/quercus/4.0.66/quercus-4.0.66.jar"] });
     let PHPFactor = libs.type("com.caucho.quercus.script.QuercusScriptEngineFactory");
     let PHPManager = new PHPFactor();
     let PHPEngine = PHPManager.getScriptEngine();
@@ -49,7 +42,7 @@ var PHPEngineNK = Class(Object, {
         return PHPEngine;
       },
       getClass: function(){
-        return this;
+        return PHPEngineNK;
       },
       getEngineClass: function(){
         return PHPFactor;
@@ -94,7 +87,7 @@ var PHPEngineNK = Class(Object, {
     return subClass;
   },
   getClass: function(){
-    return this;
+    return PHPEngineNK;
   },
   constructor: function(){
     return this.build();
@@ -106,7 +99,18 @@ var PHPEngineNK = Class(Object, {
     return "PHPEngineNK[]";
   }
 });
-}else{
-    console.critical("Not Found PHPLib Plugin! Please download at https://github.com/Trollhunters501/PHPLib/releases/tag/4.0.66");
-    throw "Not Found PHPLib Plugin! Disable...";
+function enable(){
+  console.info(prefix+"§aDone");
 }
+function load(){
+  console.info(prefix+"§eLoading...");
+}
+function disable(){
+  console.info(prefix+"§cBye!");
+}
+module.exports = {
+  onEnable: enable,
+  onLoad: load,
+  onDisable: disable,
+  PHPEngineNK: PHPEngineNK
+};
