@@ -9,7 +9,7 @@ Run PHP on Nukkit!
 
 JSEngineNK Plugin: https://cloudburstmc.org/resources/jsenginenk.939/
 
-PHPLib Plugin: https://github.com/Trollhunters501/PHPLib
+And JSEK2: https://cloudburstmc.org/resources/jsenk2.1017/
 
 Know Basic JavaScript.
 
@@ -33,18 +33,16 @@ function functionUsed(sender, args, label, manageCMD){
 
 First create a script in JSEngineNK as said in your example.
 
-Check if the Library is installed as follows:
+Example:
 
 ```js
-if(!script.getScriptByName("PHPEngineNK")){ //If it is not installed, we install it:
-  load("https://cdn.jsdelivr.net/gh/Trollhunters501/PHPEngineNK/src/Creadores%20Program/PHPEngineNK.js");
-}
+const PhpEng = require("PHPEngineNK/org/CreadoresProgram/PHPEngineNK.js");
 ```
 
 Then create an instance of the Engine:
 
 ```js
-var TestPHP = new PHPEngineNK().build();
+var TestPHP = new PhpEng.PHPEngineNK().build();
 ```
 
 and then you can run PHP in Nukkit!
