@@ -151,6 +151,10 @@ $test = java_class("cn.nukkit.Server");
 //or
 import cn.nukkit.Server;
 //with import you can extend the Java class with PHP!
+// Or
+$myva = new Java("java.util.Date", $arg1, $arg2);//("class", args...)
+//JavaBeans:
+$mybean = java_bean("java-bean");
 ```
 Same as Java.type!
 
